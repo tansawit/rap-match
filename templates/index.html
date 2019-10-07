@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<title>Rap Lyrics Matching</title>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+
+</head>
+
+<body>
+    <h1>Rapper Lyric Matching</h1>
+    <div class="searchbox">
+        <form action="" method="post" placeholder="Enter Your Lyrics">
+            {{ form.csrf }}
+            <div class="input text">{{ form.lyrics_input }}</div>
+            <div class="systemchoice">
+                Model: {{form.systems}}
+            </div>
+            <div class="input submit">
+                <input type="submit" value="Submit"></div>
+        </form>
+    </div>
+    <div class="result">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for message in messages %}
+        <p>
+            {{ message[1] }}
+        </p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+
+</html>
