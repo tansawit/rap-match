@@ -16,7 +16,7 @@ Create a Python virtual environment and install the necessary packages:
 python -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
-pip install --requirements.txt
+pip install -r requirements.txt
 ```
 
 Then run the web app and navigate to the URL:
